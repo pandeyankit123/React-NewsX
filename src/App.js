@@ -3,7 +3,7 @@ import './App.css';
 import React, { useState } from 'react'
 import NavBar from './components/NavBar';
 import News from './components/News';
-// import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import LoadingBar from 'react-top-loading-bar'
 
 const App = ()=> {
@@ -14,12 +14,12 @@ const App = ()=> {
     return (
       <div>
         {/* #Option 1: This is simple usecase and is deployed on github pages */}
-        <NavBar/> 
+        {/* <NavBar/> 
         <LoadingBar height={3} color='#f11946' progress={progress} />
-        <News setProgress={setProgress} apiKey={apiKey} key="general" pageSize={pageSize} country="in" category="general"/> 
+        <News setProgress={setProgress} apiKey={apiKey} key="general" pageSize={pageSize} country="in" category="general"/>  */}
 
         {/* #Option 2: this uses route and hence cannot be deployed on github pages but it display news category wise */}
-        {/* <Router>
+        <Router>
         <NavBar/> 
         <LoadingBar height={3} color='#f11946' progress={progress} />
         <Switch>
@@ -31,7 +31,7 @@ const App = ()=> {
           <Route exact path="/sports"><News setProgress={setProgress} apiKey={apiKey} key="sports" pageSize={pageSize} country="in" category="sports"/></Route> 
           <Route exact path="/technology"><News setProgress={setProgress} apiKey={apiKey} key="technology" pageSize={pageSize} country="in" category="technology"/></Route> 
         </Switch>
-        </Router> */}
+        </Router>
       </div>
     )
  
